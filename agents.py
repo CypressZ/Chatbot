@@ -203,7 +203,7 @@ class Head_Agent:
         # run obnoxious-injection agent
         obnoxious_or_injection = self.obnoxious_injection_agent.check_query(query)
         if obnoxious_or_injection:
-            return "Please do not be obnoxiuos."
+            return "Sorry I cannot answer this question."
         
         # if not obnoxious or prompt injection, check for relevance
         docs = self.query_agent.query_vector_store(query)
