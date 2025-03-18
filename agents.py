@@ -203,13 +203,13 @@ class Head_Agent:
         # run obnoxious-injection agent
         obnoxious_or_injection = self.obnoxious_injection_agent.check_query(query)
         if obnoxious_or_injection:
-            return "Sorry, I cannot answer this question."
+            return "Please do not be obnoxiuos."
         
         # if not obnoxious or prompt injection, check for relevance
         docs = self.query_agent.query_vector_store(query)
         relevant = self.relevance_agent.check_query(query, docs)
         if not relevant:  # check for relevance
-            return 'Sorry, this is an irrelevant topic.'
+            return 'Sorry, this is an irrelevant topic. Ask a question about machine learning instead.'
 
         # after passing obnoxious, prompt injection, and relevance checks,
         # proceed with the actual answer
